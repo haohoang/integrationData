@@ -1,0 +1,35 @@
+{
+    "baseSalary": {
+        "currency": "VND", 
+        "value": "Cạnh tranh"
+    }, 
+    "industry": "Điện / Điện tử / Điện lạnh, CNTT - Phần cứng / Mạng", 
+    "jobBenefits": "Chế độ bảo hiểm, Du Lịch, Chế độ thưởng, Chăm sóc sức khỏe, Đào tạo, Tăng lương", 
+    "datePosted": "2021-04-12", 
+    "validThrough": "2021-04-30", 
+    "occupationalCategory": "Nhân viên", 
+    "description": "Quy hoạch và thiết kế các Data Center mới trên toàn quốc:- Lên giải pháp, bản vẽ thiết kế cho các trung tâm dữ liệu", 
+    "experienceRequirements": "- Tốt nghiệp Cao đẳng/Đại học chuyên ngành Điện - điện tử, điện lạnh hoặc tương đương- Có kinh nghiệm ít nhất 2 năm về hệ thống điện, điện lạnh hoặc phòng cháy chữa cháy", 
+    "educationRequirements": "Không yêu cầu bằng cấp", 
+    "qualifications": "Không yêu cầu bằng cấp", 
+    "hiringOrganization": {
+        "name": "Công ty CP Hạ tầng Viễn Thông CMC - CMC Telecom", 
+        "sameAs": "https://careerbuilder.vn/vi/nha-tuyen-dung/cong-ty-cp-ha-tang-vien-thong-cmc-cmc-telecom.35A64224.html", 
+        "logo": "https://images.careerbuilder.vn/employer_folders/lot6/88356/110x55/164200logocmctelecom2019-05.png"
+    },
+    "employmentType": ["FULL_TIME"], 
+    "jobLocation": {
+        "address": {
+            "streetAddress": "Hà Nội", 
+            "addressLocality": "Hà Nội", 
+            "addressRegion": "Hà Nội", 
+            "addressCountry": "Việt Nam", 
+            "postalCode": "70000", 
+            "detailAddress": "Tầng 11, tòa nhà CMC số 11 Duy Tân, Cầu Giấy, Hà Nội"
+        }
+    }, 
+    "title": "Chuyên Viên Quy Hoạch Data Center", 
+    "skills": "Chuyên Viên Quy Hoạch Data Center", 
+    "workHours": "8AM-5PM", 
+    "url": "https://careerbuilder.vn/vi/tim-viec-lam/chuyen-vien-quy-hoach-data-center.35B5EC27.html"
+}

@@ -1,0 +1,46 @@
+{
+    "@context": "http://schema.org",
+    "@type": "JobPosting",
+    "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "VND",
+        "value": "Cạnh tranh"
+    },
+    "industry": "CNTT - Phần mềm",
+    "jobBenefits": "Chế độ bảo hiểm, Du Lịch, Chế độ thưởng, Chăm sóc sức khỏe, Đào tạo, Tăng lương, Nghỉ phép năm",
+    "datePosted": "2021-04-13",
+    "validThrough": "2021-05-06",
+    "occupationalCategory": "Nhân viên",
+    "description": "Xây dựng và hoàn thiện các phần mềm quản lý CRM, ACC... của công ty. Tiến hành nâng cấp, bảo trì dữ liệu theo chính sách điều chỉnh hằng năm của công ty.Backup dữ liệu hàng tuần, xử lý sự cố xảy ra trong quá trình vận hành hệ thống.Báo cáo công việc hằng tuần về tiến độ phát triển và xử lý các vấn đề phát sinh cho lãnh đạo.Tham gia xây dựng và hỗ trợ các dự án mới theo định hướng phát triển của công ty.Các công việc khác theo sự phân công của cấp quản lý",
+    "experienceRequirements": "Nam, không quá 35 tuổi.Tốt nghiệp Đại học trở lên chuyên ngành Công nghệ thông tin hoặc các chuyên ngành khác liên quan.Có ít nhất 1 năm kinh nghiệm làm việc trong Lập trình ứng dụng web services.Thành thạo ngôn ngữ Asp.net, MVC, Entity framework, link q, web services, JavaScipt, JQuery, html, css,...Am hiểu và vận dụng các tool báo cáo hoặc các ứng dụng mới vào hệ thống.Xử lý dữ liệu tốt với hệ thống big dataCó trách nhiệm, tích cực chủ động trong công việc.Khả năng chịu áp lực công việc tốt.Khả năng làm việc chủ động, xử lý vấn đề tốtQUYỀN LỢI ỨNG VIÊNLàm việc Thứ 2 - thứ 6. Nghỉ thứ 7 và CN;Được ký hợp đồng lao động và hưởng đầy đủ các quyền lợi do nhà nước quy định (BHXH, BHYT, BHTN)Được đào tạo về nghiệp vụ trong suốt quá trình làm việc.Có cơ hội mở rộng kiến thức về ngành quảng cáo truyền thôngCó cơ hội làm việc trong môi trường năng động, đồng nghiệp thân thiện, được tạo mọi điều kiện để phát triển năng lực bản thân.",
+    "educationRequirements": "Đại học",
+    "qualifications": "Đại học",
+    "identifier": {
+        "@type": "PropertyValue",
+        "name": "Chicilon Media",
+        "value": "35A74E89"
+    },
+    "hiringOrganization": {
+        "@type": "Organization",
+        "name": "Chicilon Media",
+        "sameAs": "https://careerbuilder.vn/vi/nha-tuyen-dung/chicilon-media.35A74E89.html",
+        "logo": "https://images.careerbuilder.vn/employer_folders/lot5/157065/110x55/144644chicilon_quang_cao_ruou.jpg"
+    },
+    "employmentType": [
+        "FULL_TIME"
+    ],
+    "jobLocation": {
+        "@type": "Place",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hồ Chí Minh",
+            "addressLocality": "Hồ Chí Minh",
+            "addressRegion": "Hồ Chí Minh",
+            "addressCountry": "Việt Nam",
+            "postalCode": "70000"
+        }
+    },
+    "title": "Nhân Viên Lập Trình",
+    "skills": "Nhân Viên Lập Trình,  lập trình viên,  chuyên viên lập trình",
+    "workHours": "8AM-5PM"
+}
