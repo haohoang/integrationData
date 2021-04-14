@@ -12,11 +12,23 @@ class QuotesSpider(scrapy.Spider):
     root_page = 'https://timviecnhanh.com/vieclam/timkiem?q=&province_ids=&field_ids[]=8&action=search&page='
     lastPage = False
     def start_requests(self):
+        with open("needCrawl/timviecnhanh.txt", 'r') as f:
+            needdata = f.read()
+            needdata = needdata.split("\n")[:-1]
+        with open("crawled/timviecnhanh.txt", 'r') as f:
+            crawled = f.read()
+            crawled = crawled.split("\n")[:-1]
+        
+        urls = []
+        for url in needdata:
+            if url not in crawled:
+                urls.append(url)
+        print("Need crawl " + str(len(urls)))
         urls = [
-            'https://timviecnhanh.com/vieclam/timkiem?q=&province_ids=&field_ids[]=8&action=search&page=1'
+            'https://timviecnhanh.com/vieclam/timkiem?q=&province_ids=&field_ids[]=8&action=search&page=16'
         ]
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            yield scrapy.Request(url=url, callback=self.parse_job)
 
     def parse(self, response):
         # from scrapy.utils.response import open_in_browser
@@ -31,7 +43,7 @@ class QuotesSpider(scrapy.Spider):
             # print(self.home + job_url[0])
             if len(job_url) > 0:
                 self.priority -= 1
-                with open("needCrawlTimviecnhanh.txt", 'a') as f:
+                with open("needCrawl/timviecnhanh.txt", 'a') as f:
                     f.write(self.home +job_url[0] + "\n")
                 yield scrapy.Request(self.home + job_url[0], callback=self.parse_job, priority = self.priority)
         time.sleep(5)
@@ -101,7 +113,7 @@ class QuotesSpider(scrapy.Spider):
         #address
         newItem.add_xpath('address', '//article//span[@class="jsx-1425348829 d-none d-md-block"]/text()')
         logging.info("Crawled " + response.url)
-        with open("crawledTimviecnhanh.txt", 'a') as f:
+        with open("crawled/timviecnhanh.txt", 'a') as f:
             f.write(response.url + "\n")
         yield newItem.load_item()
         

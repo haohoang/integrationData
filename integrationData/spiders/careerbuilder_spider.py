@@ -14,11 +14,24 @@ class CareerlinkSpider(scrapy.Spider):
     lastPage = False 
     # home = 'https://careerbuilder.vn'
     def start_requests(self):
-        urls = [
-            'https://careerbuilder.vn/viec-lam/cntt-phan-cung-mang-cntt-phan-mem-c63,1-trang-3-vi.html'
-        ]
+        with open("needCrawl/careerbuilder.txt", 'r') as f:
+            needdata = f.read()
+            needdata = needdata.split("\n")[:-1]
+        with open("crawled/careerbuilder.txt", 'r') as f:
+            crawled = f.read()
+            crawled = crawled.split("\n")[:-1]
+        
+        urls = []
+        for url in needdata:
+            if url not in crawled:
+                urls.append(url)
+        print("Need crawl " + str(len(urls)))
+        # urls = [
+        #     'https://careerbuilder.vn/viec-lam/cntt-phan-cung-mang-cntt-phan-mem-c63,1-vi.html'
+        # ]
         for url in urls:
-            yield scrapy.Request(url=url, callback=self.parse)
+            time.sleep(5)
+            yield scrapy.Request(url=url, callback=self.parse_job)
 
     def parse(self, response):
         # from scrapy.utils.response import open_in_browser
@@ -35,7 +48,7 @@ class CareerlinkSpider(scrapy.Spider):
             if len(job_url) > 0:
                 # save link need to be crawled
                 self.count -= 1
-                with open("needCrawl.txt", 'a') as f:
+                with open("needCrawl/careerbuilder.txt", 'a') as f:
                     f.write(job_url[0] + "\n")
                 yield scrapy.Request(job_url[0], callback=self.parse_job, priority=self.count)
             
@@ -68,7 +81,7 @@ class CareerlinkSpider(scrapy.Spider):
             data["jobLocation"]["address"]["detailAddress"] = response.xpath('//div[@class="info"]/p/text()').extract()[0]
             logging.info("Crawled " + response.url)
             # save link is crawled
-            with open("crawled.txt", 'a') as f:
+            with open("crawled/careerbuilder.txt", 'a') as f:
                 f.write(response.url + "\n")
             yield data
         else:
@@ -82,8 +95,9 @@ class CareerlinkSpider(scrapy.Spider):
                 except:
                     # thong tin cua cong ty duoc bao mat
                     data["jobLocation"]["address"]["detailAddress"] = ""
-                    with open("crawled.txt", 'a') as f:
+                    with open("crawled/careerbuilder.txt", 'a') as f:
                         f.write(response.url + "\n")
+                    logging.info("Crawled " + response.url)
                     yield data
             # print(address_url)
             if address_url is not None:
@@ -105,7 +119,7 @@ class CareerlinkSpider(scrapy.Spider):
         data = response.meta['item']
         data["jobLocation"]["address"]["detailAddress"] = address
         logging.info("Crawled " + data["url"])
-        with open("crawled.txt", 'a') as f:
+        with open("crawled/careerbuilder.txt", 'a') as f:
             f.write(data['url'] + "\n")
         yield data
 
